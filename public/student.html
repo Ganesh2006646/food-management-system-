@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head><body>
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Welcome, <span id="userName"></span>!</h1>
+
+        <div class="alert alert-info" role="alert">
+            <h4 class="alert-heading">Notifications</h4>
+            <div id="notification-area"></div>
+        </div>
+
+        <h2 class="text-center mt-5 mb-3">Today's Mess Menu</h2>
+        <div id="today-menu-container" class="row"></div>
+
+        <h2 class="text-center mt-5 mb-3">Tomorrow's Mess Menu</h2>
+        <div id="tomorrow-menu-container" class="row"></div>
+        
+        <h2 class="text-center mt-5 mb-3">The Day After Tomorrow's Mess Menu</h2>
+        <div id="day-after-tomorrow-menu-container" class="row"></div>
+
+        <h2 class="text-center mt-5 mb-3">Your Actions</h2>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm p-4 h-100">
+                    <h3>Manual Check-in</h3>
+                    <p>Mark yourself as present for a meal.</p>
+                    <button class="btn btn-primary" id="checkInBtn">Check In for Lunch</button>
+                    <div id="checkInMessage" class="mt-2"></div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm p-4 h-100">
+                    <h3>Give Feedback</h3>
+                    <form id="feedbackForm">
+                        <div class="mb-3">
+                            <label for="feedbackMenuId" class="form-label">Meal (Menu ID)</label>
+                            <input type="number" class="form-control" id="feedbackMenuId" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="rating" class="form-label">Rating (1-5)</label>
+                            <input type="number" class="form-control" id="rating" min="1" max="5" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="comment" class="form-label">Comments</label>
+                            <textarea class="form-control" id="comment"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit Feedback</button>
+                    </form>
+                    <div id="feedbackMessage" class="mt-2"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm p-4 h-100">
+                    <h3>Suggest a Recipe</h3>
+                    <form id="recipeForm">
+                        <div class="mb-3">
+                            <label for="dishName" class="form-label">Dish Name</label>
+                            <input type="text" class="form-control" id="dishName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Description</label>
+                            <textarea class="form-control" id="description" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit Suggestion</button>
+                    </form>
+                    <div id="recipeMessage" class="mt-2 text-center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/logic.js"></script>
+</body>
+</html>
